@@ -2,7 +2,7 @@ import { createSlice } from '@reduxjs/toolkit';
 
 const isLoadingSlice = createSlice({
   name: 'isLoading',
-  initialState: false,
+  initialState: true,
   reducers: {
     setIsLoadingGlobal: (state, action) => {
       return action.payload;  
