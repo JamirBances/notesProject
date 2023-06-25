@@ -1,0 +1,358 @@
+/* Components */
+
+/* NavBar */
+div .me-auto.navbar-nav{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* -- button create note */
+a.nav-link:nth-child(1){
+  display: flex;
+  justify-content: center;
+  width: 200px;
+  height: 35px;
+}
+
+a {
+  position: relative;
+  display: block;
+  text-decoration: none;
+  text-transform: uppercase;
+  width: 200px;
+  overflow: hidden;
+  border-radius: 40px;
+}
+
+a span {
+  position: relative;
+  color: #fff;
+  top: -1px;
+  font-size: 15px;
+  font-family: Arial;
+  letter-spacing: 3px;
+  z-index: 1;
+}
+
+a .liquid {
+  position: absolute;
+  top: -90px;
+  left: 0;
+  width: 200px;
+  height: 200px;
+  background: #5d688b;
+  box-shadow: inset 0 0 50px rgba(0, 0, 0, .5);
+  transition: .5s;
+}
+
+a .liquid::after,
+a .liquid::before {
+  content: '';
+  width: 200%;
+  height: 200%;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%, -75%);
+  background: #000;
+}
+
+a .liquid::before {
+  
+  border-radius: 45%;
+  background: rgba(20, 20, 20, 1);
+  animation: animate 5s linear infinite;
+}
+
+a .liquid::after {
+  
+  border-radius: 40%;
+  background: rgba(20, 20, 20, .5);
+  animation: animate 10s linear infinite;
+}
+
+a:hover .liquid{
+  top: -120px;
+}
+
+@keyframes animate {
+  0% {
+    transform: translate(-50%, -75%) rotate(0deg);
+  }
+  100% {
+    transform: translate(-50%, -75%) rotate(360deg);
+  }
+}
+/* -- END button create note */
+
+a.nav-link {
+  text-align: center;
+}
+
+
+
+/* FormCreateNote */
+.form-create-note-container-father{
+  background-color: rgba(0, 0, 0, .3);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1;
+}
+
+.form-create-note-container{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #5d688b;
+  border-radius: 1rem;
+  width: 50%;
+}
+
+.form-create-note-background{
+  width: 90%;
+  padding: 2rem 0;
+}
+
+.form-create-note-h1{
+  color: white;
+  margin-bottom: 1rem;
+}
+
+.form-create-note{
+  display: flex;
+  flex-direction: row;
+}
+
+.form-create-note-subtitles{
+  margin-right: 1rem;
+}
+
+.form-create-note-subtitles, .form-create-note-textareas{
+  display: flex;
+  flex-direction: column;
+}
+
+.form-create-note-textareas{
+  width: 100%;
+}
+
+.form-create-note-subtitles label:nth-child(1){
+  margin-bottom: 1rem;
+}
+
+.form-create-note-subtitles label{
+  color: white;
+  font-weight: 700;
+}
+
+.form-create-note-textareas input{
+  border-radius: 1rem;
+  margin-bottom: 1rem;
+}
+
+.form-create-note-textareas textarea{
+  height: 12rem;
+  border-radius: 1rem;
+}
+
+.form-create-note-button-container{
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  margin-top: 1rem;
+  width: 100%;
+}
+
+.form-create-note-button-container button:nth-child(1){
+  margin-right: 2rem;
+}
+
+.form-create-note-button {
+  position: relative;
+  border: none;
+  background: transparent;
+  padding: 0;
+  cursor: pointer;
+  outline-offset: 4px;
+  transition: filter 250ms;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.form-create-note-button-shadow {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 12px;
+  background: hsl(0deg 0% 0% / 0.25);
+  will-change: transform;
+  transform: translateY(2px);
+  transition:
+    transform
+    600ms
+    cubic-bezier(.3, .7, .4, 1);
+}
+
+.form-create-note-button-edge {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 12px;
+  background: linear-gradient(
+    to left,
+    #5B6688 0%,
+    #3A89AF 8%,
+    #3A89AF 92%,
+    #5B6688 100%
+  );
+}
+
+.form-create-note-button-front {
+  display: block;
+  position: relative;
+  padding: 5px 15px;
+  border-radius: 12px;
+  font-size: 1.1rem;
+  color: white;
+  background: #00ADBF;
+  will-change: transform;
+  transform: translateY(-4px);
+  transition:
+    transform
+    600ms
+    cubic-bezier(.3, .7, .4, 1);
+}
+
+@media (min-width: 768px) {
+  .form-create-note-button-front {
+    font-size: 1rem;
+    padding: 5px 15px;
+  }
+}
+
+.form-create-note-button:hover {
+  filter: brightness(110%);
+  -webkit-filter: brightness(110%);
+}
+
+.form-create-note-button:hover .form-create-note-button-front {
+  transform: translateY(-6px);
+  transition:
+    transform
+    250ms
+    cubic-bezier(.3, .7, .4, 1.5);
+}
+
+.form-create-note-button:active .form-create-note-button-front {
+  transform: translateY(-2px);
+  transition: transform 34ms;
+}
+
+.form-create-note-button:hover .form-create-note-button-shadow {
+  transform: translateY(4px);
+  transition:
+    transform
+    250ms
+    cubic-bezier(.3, .7, .4, 1.5);
+}
+
+.form-create-note-button:active .form-create-note-button-shadow {
+  transform: translateY(1px);
+  transition: transform 34ms;
+}
+
+.form-create-note-button:focus:not(:focus-visible) {
+  outline: none;
+}
+
+/*Loading spinner*/
+
+.spinner-overlay{
+  background-color: rgba(0, 0, 0, .3);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1;
+}
+
+.lds-ellipsis {
+  display: inline-block;
+  position: relative;
+  width: 80px;
+  height: 80px;
+}
+.lds-ellipsis div {
+  position: absolute;
+  top: 33px;
+  width: 13px;
+  height: 13px;
+  border-radius: 50%;
+  background: #fff;
+  animation-timing-function: cubic-bezier(0, 1, 1, 0);
+}
+.lds-ellipsis div:nth-child(1) {
+  left: 8px;
+  animation: lds-ellipsis1 0.6s infinite;
+}
+.lds-ellipsis div:nth-child(2) {
+  left: 8px;
+  animation: lds-ellipsis2 0.6s infinite;
+}
+.lds-ellipsis div:nth-child(3) {
+  left: 32px;
+  animation: lds-ellipsis2 0.6s infinite;
+}
+.lds-ellipsis div:nth-child(4) {
+  left: 56px;
+  animation: lds-ellipsis3 0.6s infinite;
+}
+@keyframes lds-ellipsis1 {
+  0% {
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+@keyframes lds-ellipsis3 {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(0);
+  }
+}
+@keyframes lds-ellipsis2 {
+  0% {
+    transform: translate(0, 0);
+  }
+  100% {
+    transform: translate(24px, 0);
+  }
+}
+
+/* Media queries */
+
+@media screen and (max-width: 991px){
+  .form-create-note-container{
+    width: 100%;
+  }
+}

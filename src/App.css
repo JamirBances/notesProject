@@ -1,0 +1,237 @@
+@import url("https://fonts.googleapis.com/css2?family=Comic+Neue:wght@400;700&display=swap");
+
+html {
+  box-sizing: border-box;
+  height: 100%;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+body {
+  height: 100%;
+}
+
+#root {
+  background-image: url(assets/haikei-background.svg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100vh;
+  padding-bottom: 1.5rem;
+}
+
+.home {
+  font-family: "Comic Neue", cursive;
+}
+
+/* Page - HOME */
+
+.container-global{
+  overflow: auto;
+}
+
+.home-notes {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #5b6688;
+  color: white;
+  padding: 1rem;
+  border-radius: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.home-notes-information {
+  display: flex;
+  flex-direction: row;
+}
+
+.home-notes-information img {
+  width: 220px;
+  margin-right: 2rem;
+}
+
+.home-notes-information-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: flex-start;
+}
+
+.home-notes-information-text p {
+  margin: 0;
+}
+
+.home-notes-icons {
+  display: flex;
+  flex-direction: column;
+  margin-right: 1rem;
+}
+
+/*---------------------------------------------*/
+.home-notes-icons-button-pushable {
+  position: relative;
+  border: none;
+  background: transparent;
+  padding: 0;
+  cursor: pointer;
+  outline-offset: 4px;
+  transition: filter 250ms;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  margin: 5px 0;
+}
+
+.home-notes-icons-button-shadow {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 12px;
+  background: hsl(0deg 0% 0% / 0.25);
+  will-change: transform;
+  transform: translateY(2px);
+  transition: transform 600ms cubic-bezier(0.3, 0.7, 0.4, 1);
+}
+
+.home-notes-icons-button-edge {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 12px;
+  background: linear-gradient(
+    to left,
+    #5b6688 0%,
+    #3a89af 8%,
+    #3a89af 92%,
+    #5b6688 100%
+  );
+}
+
+.home-notes-icons-button-front {
+  display: block;
+  position: relative;
+  padding: 5px 1px;
+  border-radius: 12px;
+  font-size: 1.1rem;
+  color: white;
+  background: #00adbf;
+  will-change: transform;
+  transform: translateY(-4px);
+  transition: transform 600ms cubic-bezier(0.3, 0.7, 0.4, 1);
+}
+
+.home-notes-icons-button-pushable:hover {
+  filter: brightness(110%);
+  -webkit-filter: brightness(110%);
+}
+
+.home-notes-icons-button-pushable:hover .home-notes-icons-button-front {
+  transform: translateY(-6px);
+  transition: transform 250ms cubic-bezier(0.3, 0.7, 0.4, 1.5);
+}
+
+.home-notes-icons-button-pushable:active .home-notes-icons-button-front {
+  transform: translateY(-2px);
+  transition: transform 34ms;
+}
+
+.home-notes-icons-button-pushable:hover .home-notes-icons-button-shadow {
+  transform: translateY(4px);
+  transition: transform 250ms cubic-bezier(0.3, 0.7, 0.4, 1.5);
+}
+
+.home-notes-icons-button-pushable:active .home-notes-icons-button-shadow {
+  transform: translateY(1px);
+  transition: transform 34ms;
+}
+
+.home-notes-icons-button-pushable:focus:not(:focus-visible) {
+  outline: none;
+}
+/*---------------------------------------------*/
+
+.home-notes-icons i {
+  margin: 0 0.7rem;
+}
+
+/* MEDIA QUERIES */
+
+@media screen and (max-width: 1199px) {
+  .home-notes-icons {
+    display: flex;
+    flex-direction: column;
+    margin: 0 0.5rem 0 1rem;
+  }
+
+  .home-notes-icons-button-pushable {
+    margin: 5px 0;
+  }
+
+  .home-notes-icons-button-front {
+    font-size: 1rem;
+    padding: 1px 10px;
+  }
+
+  .home-notes-icons i {
+    margin: 0.5rem 0;
+  }
+}
+
+@media screen and (max-width: 991px) {
+  .home-notes-icons {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .home-notes-icons-button-pushable {
+    margin: 0 5px;
+  }
+
+  .home-notes-icons-button-front {
+    padding: 5px 5px;
+  }
+
+  .home-notes-icons i {
+    margin: 0 0.7rem;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .home-notes-information img {
+    width: 200px;
+    margin-right: 1rem;
+  }
+
+  .home-notes-icons {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .home-notes-icons-button-pushable {
+    margin: 5px 0;
+  }
+
+  .home-notes-icons-button-front {
+    padding: 1px 10px;
+  }
+
+  .home-notes-icons i {
+    margin: 0.5rem 0;
+  }
+}
+
+@media screen and (max-width: 375px) {
+  .home-notes-information img {
+    width: 160px;
+    margin-right: 1rem;
+  }
+}
