@@ -1,4 +1,4 @@
-# Vite Project
+# Notes Project
 Este es un proyecto basado en Vite, una herramienta de construcción y desarrollo rápido para aplicaciones web modernas. El proyecto se ha configurado como privado.
 ## Dependencias
 
